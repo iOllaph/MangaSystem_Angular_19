@@ -1,0 +1,136 @@
+a {
+    text-decoration: none;
+}
+
+.body-wrapper {
+
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--isabelline);
+    overflow: hidden;
+
+    .nav-bar {
+
+        position: absolute;
+        bottom: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 20px;
+        height: 8%;
+        z-index: 15;
+
+        a {
+
+            padding: 10px 10px;
+            background-color: var(--dark-moss-green);
+            color: var(--cornsilk);
+            font-family: 'Noto Sans HK', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background-color 0.5s ease
+        }
+
+        .a-link-home:hover {
+
+            background-color: var(--pakistan-green);
+
+        }
+
+    }
+
+    .manga-image {
+
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        /* Add relative positioning to create a stacking context */
+        background: rgb(254, 250, 224);
+        background: linear-gradient(90deg, rgba(254, 250, 224, 1) 0%, rgba(96, 108, 48, 1) 100%);
+
+        img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 5;
+
+        }
+
+
+
+        .manga-wrapper {
+
+            width: 100vw;
+            height: 100vh;
+            flex-direction: row;
+            display: grid;
+            flex-direction: row;
+            grid-template-columns: repeat(6, 1fr);
+            /* Divide into 6 equal columns */
+            gap: 0;
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+        }
+
+    }
+
+    .nav-footer {
+
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        height: 8%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 15;
+
+        a {
+
+            margin-left: 30px;
+            margin-right: 30px;
+
+        }
+
+        .a-link {
+            position: relative;
+            color: var(--pakistan-green);
+            font-family: 'Noto Sans HK', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 10px 10px;
+            background-color: var(--cornsilk);
+
+
+        }
+
+        .a-link::before {
+
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70%;
+            height: 5px;
+            background-color: var(--pakistan-green);
+            transition: width 0.3s ease;
+
+        }
+
+
+        .a-link:hover::before {
+
+            width: 0%;
+
+        }
+
+    }
+
+}
