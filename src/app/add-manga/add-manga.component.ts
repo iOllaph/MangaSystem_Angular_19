@@ -1,11 +1,7 @@
+import { MangaPanelService, Manga } from './../manga-panel.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
-interface Manga {
-  title: string;
-  chapter: string;
-  image: string;
-}
 
 
 
@@ -16,15 +12,11 @@ interface Manga {
 })
 export class AddMangaComponent {
 
-  panels: Manga[] = [];
-
   previewImage = "";
 
-
-  constructor(private fb: FormBuilder) { };
+  constructor(private fb: FormBuilder, private mangaPanelService: MangaPanelService) { };
 
   ngOnInit(): void { };
-
 
   addedPanel = this.fb.group({
 
@@ -34,12 +26,7 @@ export class AddMangaComponent {
 
     image: ["", Validators.required],
 
-
   });
-
-
-
-
 
   onSubmit() {
 
@@ -67,11 +54,9 @@ export class AddMangaComponent {
         image: this.addedPanel.get('image')?.value ?? ""
       };
 
+      this.mangaPanelService.addToPanelsArray(manga);
 
-      this.panels.push(manga);
-
-
-      console.log(this.panels);
+      window.alert('Your panel has been added!');
 
       // Reset the form
       this.addedPanel.reset();
