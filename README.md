@@ -1,3 +1,23 @@
+
+
+interface Manga {
+  title: string;
+  chapter: string;
+  image: string;
+}
+
+The interface Manga is a TypeScript interface that defines a contract for objects that represent manga. In this case, it specifies that a Manga object should have three properties:
+
+title: a property of type string, which represents the title of the manga.
+chapter: a property of type string, which represents the chapter of the manga.
+image: a property of type string, which represents the image of the manga.
+By defining an interface, you can specify the expected shape of an object in your TypeScript code. Objects that implement this interface must adhere to this contract by providing properties with the specified names and types.
+
+For example, if you have a function that expects an object of type Manga as an argument, you can ensure that the passed object conforms to the Manga interface by checking that it has the title, chapter, and image properties of the correct types. This can help catch potential bugs or errors at compile-time, providing better type checking and code completion in TypeScript development.
+
+
+
+
 # MangaSystemAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
