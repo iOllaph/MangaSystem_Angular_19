@@ -8,10 +8,10 @@ import { AddMangaComponent } from './add-manga/add-manga.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "manga-list", component: MangaListComponent },
+
   { path: "favorite-manga", component: FavoriteMangaComponent },
+
   { path: "add-manga", component: AddMangaComponent }
-
-
 ];
 
 @NgModule({
