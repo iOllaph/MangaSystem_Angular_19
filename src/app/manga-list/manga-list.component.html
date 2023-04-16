@@ -11,79 +11,30 @@
 
     <div class="manga-list">
 
-        <div class="manga-panel-4column">
+        <span [ngStyle]="{ display: checkPanels() }" class="empty-favorite">Go to Add a Panel to add some panels here.</span>
 
-            <img src="assets/home-assets/tokyo-ghoul-1.jpg" >
+        <ng-container *ngFor="let manga of mangaListPanels; let i = index"  >
 
-            <div class="manga-panel-content">
+            <div  [ngClass]="{ 'manga-panel-4column':  checkIndexValue(i), 'manga-panel-2column':  !checkIndexValue(i) }" >
 
-                <span class="manga-panel-text" >Title || Chapter</span>
+                <img [src]="manga.image" *ngIf="manga.image" >
 
-                <div class="manga-panel-actions">
+                <div class="manga-panel-content">
 
-                    <span class="action-favorite">Favorite</span>
-                    <span class="action-remove">Remove</span>
+                    <span class="manga-panel-text" >  {{ manga.title }} || Chapter: {{ manga.chapter}} </span>
+                    <div class="manga-panel-actions">
 
-                </div>
+                        <span  [ngClass]="{'disable': isFavorite(manga) }" (click)="addFavoriteMangaPanel(manga)" class="action-favorite">Favorite</span>
+                        <span (click)="removeMangaPanel(i)" class="action-remove">Remove</span>
 
-            </div>
-
-        </div>
-        
-
-        <div class="manga-panel-2column">
-
-            <img src="assets/home-assets/sun-ken-rock.jpg" >
-
-            <div class="manga-panel-content">
-
-                <span class="manga-panel-text" >Title || Chapter</span>
-                <div class="manga-panel-actions">
-                    
-                    <span class="action-favorite">Favorite</span>
-                    <span class="action-remove">Remove</span>
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-        <div class="manga-panel-2column">
-
-            <img src="assets/home-assets/tokyo-ghoul-2.jpg" >
-
-            <div class="manga-panel-content">
-
-                <span class="manga-panel-text" >Title || Chapter</span>
-                <div class="manga-panel-actions">
-
-                    <span class="action-favorite">Favorite</span>
-                    <span class="action-remove">Remove</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="manga-panel-2column">
-
-            <img src="assets/home-assets/tokyo-ghoul-2.jpg" >
-            <div class="manga-panel-content">
-
-                <span class="manga-panel-text" >Title || Chapter</span>
-                <div class="manga-panel-actions">
-
-                    <span class="action-favorite">Favorite</span>
-                    <span class="action-remove">Remove</span>
-
-                </div>
-
-            </div>
-
-        </div>
-        
+        </ng-container>             
+               
     </div>
 
 </div>
