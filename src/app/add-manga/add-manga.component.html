@@ -1,2 +1,49 @@
-<p>add-manga works!</p>
-<a routerLink="/">home</a>
+<div class="manga-wrapper">
+
+    <div class="nav-bar">
+
+        <a class="a-link-home" routerLink="">Panels of Panels.</a>
+        <a class="a-link " routerLink="../favorite-manga">Favorite.</a>
+        <a class="a-link" routerLink="../manga-list">All Panels.</a>
+        <a class="a-link active"  routerLink="../add-manga">Add a Panel.</a>
+        
+
+    </div>
+
+    <div class="container">
+
+        <div class="container-content" >
+
+            <form [formGroup]="addedPanel" (ngSubmit)="onSubmit()" class="container-form">
+                
+                <mat-form-field appearance="outline" class="input-title">
+                    <mat-label>Title</mat-label>
+                    <input matInput #input  formControlName="title" maxlength="15" placeholder="Title of the Manga">
+                    <mat-hint align="end">{{input.value.length}}/15</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="input-chapter">
+                    <mat-label>Chapter</mat-label>
+                    <input matInput #input (input)="onInputChange($event)" formControlName="chapter" maxlength="4" placeholder="Chapter Number ">
+                    <mat-hint align="end">{{input.value.length}}/4</mat-hint>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="input-panel" >
+                    <mat-label>Panel Image</mat-label>
+                    <input matInput formControlName="image"  placeholder="Copy Image URL">
+                </mat-form-field>
+
+                <button type="submit"  [disabled]="!addedPanel.valid" mat-stroked-button class="button-angular">Add Panel</button>
+
+                
+            </form>
+
+            <div class="image-panel-preview">
+                <img [src]="addedPanel.get('image')?.value"  *ngIf="addedPanel.get('image')?.value" alt="Image Preview"   >
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
