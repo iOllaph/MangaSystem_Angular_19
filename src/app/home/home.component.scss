@@ -7,7 +7,6 @@ a {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: var(--isabelline);
     overflow: hidden;
 
     .nav-bar {
@@ -64,7 +63,6 @@ a {
 
             width: 100vw;
             height: 100vh;
-            flex-direction: row;
             display: grid;
             flex-direction: row;
             grid-template-columns: repeat(6, 1fr);
@@ -76,6 +74,7 @@ a {
             left: 0;
             right: 0;
             bottom: 0;
+
 
         }
 
@@ -122,7 +121,9 @@ a {
             background-color: var(--pakistan-green);
             transition: width 0.3s ease;
 
+
         }
+
 
 
         .a-link:hover::before {
