@@ -1,0 +1,343 @@
+a {
+
+    text-decoration: none;
+
+}
+
+.manga-wrapper {
+
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+
+    .nav-bar {
+
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 7%;
+        gap: 50px;
+        user-select: none;
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.4px);
+        -webkit-backdrop-filter: blur(2.4px);
+
+        .a-link-home {
+
+            padding: 10px 10px;
+            background-color: var(--cornsilk);
+            color: var(--pakistan-green);
+            font-family: 'Noto Sans HK', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background-color 0.5s ease
+        }
+
+        .a-link-home:hover {
+
+            background-color: var(--dark-moss-green);
+
+        }
+
+        .a-link {
+
+            position: relative;
+            color: var(--pakistan-green);
+            font-family: 'Noto Sans HK', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 10px 10px;
+            background-color: var(--cornsilk);
+
+        }
+
+        .a-link::before {
+
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70%;
+            height: 5px;
+            background-color: var(--pakistan-green);
+            transition: width 0.3s ease;
+
+        }
+
+        .a-link:hover::before {
+
+            width: 0%;
+
+        }
+
+        .active {
+
+            background-color: var(--dark-moss-green);
+            color: var(--cornsilk);
+        }
+
+    }
+
+    .manga-list {
+
+        margin-top: 150px;
+        margin-bottom: 150px;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        justify-content: center;
+        padding: 10px;
+        gap: 40px;
+        row-gap: 100px;
+        overflow-y: auto;
+
+        .manga-panel-4column {
+
+            height: 500px;
+            grid-column-end: 4 span;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 5px 10px -6px rgba(0, 0, 0, 0.75);
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2.4px);
+            -webkit-backdrop-filter: blur(2.4px);
+
+            img {
+
+                height: 90%;
+                width: 100%;
+                object-fit: cover;
+                box-sizing: border-box;
+                /* Add padding without affecting height */
+                padding-bottom: 10px;
+                /* Add desired padding */
+                z-index: 1;
+
+            }
+
+            .manga-panel-content {
+
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.3rem;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+
+                .manga-panel-text {
+                    color: var(--pakistan-green);
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-left: 10px;
+
+                }
+
+                .manga-panel-actions {
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 40px;
+                    position: relative;
+                    color: var(--cornsilk);
+
+                    .action-favorite {
+                        cursor: pointer;
+
+                    }
+
+                    .action-favorite:hover {
+                        color: var(--pakistan-green);
+                        font-weight: 700;
+
+                    }
+
+                    .action-favorite::before {
+
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 2px;
+                        background-color: var(--pakistan-green);
+                        transition: width 0.3s ease;
+
+                    }
+
+                    .action-favorite:hover::before {
+
+                        width: 50%;
+
+                    }
+
+                    .action-remove {
+
+                        cursor: pointer;
+
+                    }
+
+                    .action-remove:hover {
+
+                        color: var(--pakistan-green);
+                        font-weight: 700;
+                    }
+
+                    .action-remove::before {
+
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 2px;
+                        background-color: var(--pakistan-green);
+                        transition: width 0.3s ease;
+
+                    }
+
+                    .action-remove:hover::before {
+
+                        width: 100%;
+
+                    }
+
+                }
+            }
+
+        }
+
+        .manga-panel-2column {
+
+            grid-column-end: 2 span;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 5px 10px -6px rgba(0, 0, 0, 0.75);
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2.4px);
+            -webkit-backdrop-filter: blur(2.4px);
+
+
+            img {
+
+                height: 90%;
+                width: 100%;
+                object-fit: cover;
+                box-sizing: border-box;
+                /* Add padding without affecting height */
+                padding-bottom: 10px;
+                /* Add desired padding */
+
+            }
+
+            .manga-panel-content {
+
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.3rem;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+
+                .manga-panel-text {
+
+                    color: var(--pakistan-green);
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+
+                .manga-panel-actions {
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 40px;
+                    position: relative;
+                    color: var(--cornsilk);
+
+                    .action-favorite {
+
+                        cursor: pointer;
+
+                    }
+
+                    .action-favorite:hover {
+                        color: var(--pakistan-green);
+                        font-weight: 700;
+
+                    }
+
+                    .action-favorite::before {
+
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 2px;
+                        background-color: var(--pakistan-green);
+                        transition: width 0.3s ease;
+
+                    }
+
+                    .action-favorite:hover::before {
+
+                        width: 50%;
+
+                    }
+
+                    .action-remove {
+
+                        cursor: pointer;
+
+                    }
+
+                    .action-remove:hover {
+
+                        color: var(--pakistan-green);
+                        font-weight: 700;
+                    }
+
+                    .action-remove::before {
+
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 2px;
+                        background-color: var(--pakistan-green);
+                        transition: width 0.3s ease;
+
+                    }
+
+                    .action-remove:hover::before {
+
+                        width: 100%;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
