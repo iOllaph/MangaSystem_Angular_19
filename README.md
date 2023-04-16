@@ -33,6 +33,14 @@ By defining an interface, you can specify the expected shape of an object in you
 For example, if you have a function that expects an object of type Manga as an argument, you can ensure that the passed object conforms to the Manga interface by checking that it has the title, chapter, and image properties of the correct types. This can help catch potential bugs or errors at compile-time, providing better type checking and code completion in TypeScript development.
 
 
+# Services
+
+
+
+# Reactive Forms
+
+
+
 
 # MangaSystemAngular
 
