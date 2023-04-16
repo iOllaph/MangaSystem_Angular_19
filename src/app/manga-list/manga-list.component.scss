@@ -4,6 +4,21 @@ a {
 
 }
 
+.disable {
+    opacity: 0.5;
+    color: var(--pakistan-green);
+    font-weight: 700;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+
+
+
+
+}
+
+
+
 .manga-wrapper {
 
     position: relative;
@@ -99,6 +114,27 @@ a {
         row-gap: 100px;
         overflow-y: auto;
 
+        .empty-favorite {
+
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            grid-column-end: 10 span;
+            font-size: 3rem;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            color: var(--cornsilk);
+            background: #4f5d75;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.6px);
+            -webkit-backdrop-filter: blur(9.6px);
+
+
+        }
+
+
         .manga-panel-4column {
 
             height: 500px;
@@ -116,7 +152,7 @@ a {
 
                 height: 90%;
                 width: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 box-sizing: border-box;
                 /* Add padding without affecting height */
                 padding-bottom: 10px;
@@ -144,6 +180,7 @@ a {
                 }
 
                 .manga-panel-actions {
+
                     margin-top: 5px;
                     display: flex;
                     align-items: center;
@@ -183,6 +220,7 @@ a {
                     }
 
                     .action-remove {
+
 
                         cursor: pointer;
 
@@ -235,7 +273,7 @@ a {
 
                 height: 90%;
                 width: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 box-sizing: border-box;
                 /* Add padding without affecting height */
                 padding-bottom: 10px;
@@ -262,6 +300,7 @@ a {
                 }
 
                 .manga-panel-actions {
+
                     margin-top: 5px;
                     display: flex;
                     align-items: center;
@@ -277,6 +316,7 @@ a {
                     }
 
                     .action-favorite:hover {
+
                         color: var(--pakistan-green);
                         font-weight: 700;
 

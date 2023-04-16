@@ -6,6 +6,8 @@
         <a class="a-link " routerLink="../favorite-manga">Favorite.</a>
         <a class="a-link" routerLink="../manga-list">All Panels.</a>
         <a class="a-link active"  routerLink="../add-manga">Add a Panel.</a>
+
+       
         
 
     </div>
@@ -18,14 +20,14 @@
                 
                 <mat-form-field appearance="outline" class="input-title">
                     <mat-label>Title</mat-label>
-                    <input matInput #input  formControlName="title" maxlength="15" placeholder="Title of the Manga">
-                    <mat-hint align="end">{{input.value.length}}/15</mat-hint>
+                    <input matInput #inputTitle  formControlName="title" maxlength="15" placeholder="Title of the Manga">
+                    <mat-hint align="end">{{inputTitle.value.length}}/15</mat-hint>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="input-chapter">
                     <mat-label>Chapter</mat-label>
-                    <input matInput #input (input)="onInputChange($event)" formControlName="chapter" maxlength="4" placeholder="Chapter Number ">
-                    <mat-hint align="end">{{input.value.length}}/4</mat-hint>
+                    <input matInput #inputChapter (input)="onInputChange($event)" formControlName="chapter" maxlength="4" placeholder="Only the Number ">
+                    <mat-hint align="end">{{inputChapter.value.length}}/4</mat-hint>
                 </mat-form-field>
                 
                 <mat-form-field appearance="outline" class="input-panel" >
@@ -41,6 +43,7 @@
             <div class="image-panel-preview">
                 <img [src]="addedPanel.get('image')?.value"  *ngIf="addedPanel.get('image')?.value" alt="Image Preview"   >
             </div>
+
 
         </div>
 
